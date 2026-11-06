@@ -1,0 +1,76 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0a0a0a;--black2:#111;--black3:#1a1a1a;--gray-dark:#222;--gray-mid:#333;--gray-light:#888;
+  --white:#f0ede8;--white-dim:#b0ada8;--red:#cc1a1a;--red-bright:#e62020;--red-bg:rgba(204,26,26,.1);
+  --border:rgba(255,255,255,.07);--border-red:rgba(204,26,26,.3);--ok:#4ade80;--wa:#e5b53d;
+  --radius:4px;--radius-lg:6px;color-scheme:dark}
+body{font-family:'Inter',sans-serif;background:var(--black);color:var(--white);font-size:14px;line-height:1.6;min-height:100vh}
+
+header{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:22px 16px 16px;text-align:center}
+header h1{font-size:clamp(28px,5vw,42px);line-height:1.15;letter-spacing:1.5px}
+header>div{display:flex;align-items:center;justify-content:center;gap:10px}
+
+/* Barra superior */
+.topbar{background:var(--black2);border-bottom:1px solid var(--border);padding:0 1.5rem;height:58px;display:flex;align-items:center;gap:1rem;position:sticky;top:0;z-index:100}
+.logo-wrap{display:flex;align-items:center;gap:12px}
+.logo-icon{width:34px;height:34px;border-radius:var(--radius);background:var(--red-bg);border:1px solid var(--border-red);display:flex;align-items:center;justify-content:center;color:var(--red-bright);font-size:18px}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;line-height:1}
+.logo-text span{color:var(--red)}
+.top-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.badge{font-size:11px;font-weight:600;letter-spacing:1px;padding:3px 10px;border-radius:var(--radius);background:var(--red-bg);color:var(--red-bright);border:1px solid var(--border-red)}
+.badge:empty{display:none}
+
+main{max-width:900px;margin:0 auto;padding:2rem 1.5rem 160px}
+.page-header{margin-bottom:1.5rem;border-bottom:1px solid var(--border);padding-bottom:1.25rem}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:3px;line-height:1}
+.page-sub{font-size:12px;color:var(--gray-light);margin-top:4px;letter-spacing:1px;text-transform:uppercase}
+
+/* Pestañas */
+#nav{display:flex;justify-content:center;gap:8px;margin:0 auto 1.25rem;padding:0 12px;flex-wrap:wrap}
+#nav button{padding:8px 16px;background:var(--black3);color:var(--white-dim);border:1px solid var(--border);border-radius:var(--radius);font:600 12px 'Inter',sans-serif;letter-spacing:.5px;text-transform:uppercase;cursor:pointer}
+#nav button:hover{background:var(--gray-dark)}
+#nav button.on{background:var(--red-bg);color:var(--red-bright);border-color:var(--border-red)}
+
+/* Tarjetas */
+.card{background:var(--black2);border:1px solid var(--border);border-top:2px solid var(--red);border-radius:var(--radius-lg);padding:1.1rem 1.4rem;margin-bottom:1rem}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.mu{color:var(--gray-light);font-size:12.5px}
+.pr{font-weight:600;color:var(--white);white-space:nowrap}
+h2{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;font-weight:400;color:var(--white);margin:1.6rem 0 .7rem;padding-left:10px;border-left:3px solid var(--red)}
+.card b{font-weight:600}
+
+/* Botones */
+button{font-family:'Inter',sans-serif;cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:var(--red-bg);color:var(--red-bright);border:1px solid var(--border-red);border-radius:var(--radius);font-size:12px;font-weight:600;letter-spacing:.5px}
+.btn:hover{background:rgba(204,26,26,.18)}
+.btn:disabled{opacity:.35;cursor:default}
+.btn.g{background:var(--black3);color:var(--white-dim);border-color:var(--border)}
+.btn.g:hover{background:var(--gray-dark)}
+.btn.d{background:transparent;color:var(--red-bright);border-color:var(--border-red)}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+
+/* Formularios */
+input,textarea{width:100%;padding:9px 12px;background:var(--black3);border:1px solid var(--gray-mid);border-radius:var(--radius);color:var(--white);font:13px 'Inter',sans-serif;outline:none;margin-bottom:8px;transition:border-color .12s}
+input:focus,textarea:focus{border-color:var(--red)}
+::placeholder{color:var(--gray-light)}
+
+/* Cantidad */
+.qty{display:flex;align-items:center;gap:8px}
+.qty button{width:26px;height:28px;background:var(--red-bg);color:var(--red-bright);border:1px solid var(--border-red);border-radius:3px;font-size:16px;font-weight:700;line-height:1;padding:0}
+.qty button:hover{background:rgba(204,26,26,.25)}
+.qty button:active{transform:scale(.92)}
+.qty b{min-width:20px;text-align:center}
+
+/* Barra del carrito */
+.cart{position:fixed;left:0;right:0;bottom:0;max-width:900px;margin:0 auto;background:var(--black2);border-top:2px solid var(--red);padding:12px 1.5rem calc(12px + env(safe-area-inset-bottom,0px))}
+
+/* Tickets */
+.st{font-size:10.5px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:2px 9px;border-radius:var(--radius);border:1px solid currentColor}
+.s-nuevo{color:var(--red-bright)}.s-preparando{color:var(--wa)}.s-listo{color:var(--ok)}.s-entregado{color:var(--gray-light)}
+.ticket{border-top:1px solid var(--border);border-left:4px solid var(--red);font-family:ui-monospace,Menlo,Consolas,monospace}
+.ticket.preparando{border-left-color:var(--wa)}.ticket.listo{border-left-color:var(--ok)}.ticket.entregado{border-left-color:var(--gray-mid);opacity:.7}
+.ticket ul{margin:8px 0;padding-left:18px;color:var(--white-dim)}
+.empty{text-align:center;color:var(--gray-light);padding:40px 0;font-size:13px;letter-spacing:.5px}
+.off{opacity:.45}
+.login{max-width:360px;margin:40px auto}
+footer{text-align:center;color:var(--gray-light);font-size:11px;margin-top:2rem}
